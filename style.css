@@ -5,7 +5,7 @@
 :root {
   --bg: #050816;
   --bg-alt: #0b1120;
-  --accent: #38bdf8;
+  --accent: #fb923c; /* cam nhẹ */
   --text: #e5e7eb;
   --muted: #9ca3af;
   --card: #020617;
@@ -13,13 +13,13 @@
 }
 
 :root.light {
-  --bg: #f3f4f6;
+  --bg: #fef3c7; /* nền sáng hơi vàng/cam */
   --bg-alt: #ffffff;
-  --accent: #2563eb;
+  --accent: #f97316; /* cam đậm hơn */
   --text: #111827;
   --muted: #4b5563;
   --card: #ffffff;
-  --border: #e5e7eb;
+  --border: #fed7aa;
 }
 
 html {
@@ -34,7 +34,7 @@ body {
 }
 
 :root.light body {
-  background: radial-gradient(circle at top, #e5e7eb 0, #f9fafb 45%, #e5e7eb 100%);
+  background: radial-gradient(circle at top, #ffedd5 0, #fff7ed 45%, #ffedd5 100%);
 }
 
 .hero {
@@ -80,7 +80,7 @@ body {
 }
 
 :root.light .theme-toggle {
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.9);
 }
 
 h1 {
@@ -116,7 +116,7 @@ h1 {
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  background: linear-gradient(135deg, #fb923c, #f97316);
 }
 
 .btn.ghost {
@@ -158,14 +158,14 @@ main {
 .badge {
   padding: 0.25rem 0.7rem;
   border-radius: 999px;
-  background: rgba(56,189,248,0.09);
-  border: 1px solid rgba(56,189,248,0.4);
+  background: rgba(251,146,60,0.08);
+  border: 1px solid rgba(251,146,60,0.6);
   font-size: 0.8rem;
 }
 
 :root.light .badge {
-  background: rgba(37,99,235,0.06);
-  border-color: rgba(37,99,235,0.4);
+  background: rgba(249,115,22,0.08);
+  border-color: rgba(249,115,22,0.5);
 }
 
 .grid {
@@ -184,7 +184,7 @@ main {
 }
 
 :root.light .card {
-  background: linear-gradient(135deg, #ffffff, #f9fafb);
+  background: linear-gradient(135deg, #ffffff, #fff7ed);
   box-shadow: 0 16px 35px rgba(15,23,42,0.08);
 }
 
@@ -232,7 +232,7 @@ main {
   height: 0.7rem;
   border-radius: 999px;
   background: var(--accent);
-  box-shadow: 0 0 0 4px rgba(56,189,248,0.25);
+  box-shadow: 0 0 0 4px rgba(251,146,60,0.4);
 }
 
 .timeline-content {
