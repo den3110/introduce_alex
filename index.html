@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Giới thiệu về mình</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>Xin chào, mình là <span class="accent">[Tên của bạn]</span></h1>
+      <p class="subtitle">[Một câu ngắn gọn về bạn: nghề nghiệp / sở thích / định hướng]</p>
+      <div class="hero-actions">
+        <a href="#about" class="btn primary">Giới thiệu</a>
+        <a href="#contact" class="btn ghost">Liên hệ</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="section">
+      <h2>Về mình</h2>
+      <p>
+        [Viết một đoạn 3–5 câu giới thiệu ngắn: bạn đang làm gì, quan tâm điều gì,
+        mục tiêu cá nhân/công việc...]
+      </p>
+      <p>
+        [Nếu muốn, thêm 1 đoạn về tính cách, phong cách làm việc, giá trị bạn ưu tiên.]
+      </p>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Kỹ năng & Sở thích</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Kỹ năng chính</h3>
+          <ul>
+            <li>[Kỹ năng 1]</li>
+            <li>[Kỹ năng 2]</li>
+            <li>[Kỹ năng 3]</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Sở thích</h3>
+          <ul>
+            <li>[Sở thích 1]</li>
+            <li>[Sở thích 2]</li>
+            <li>[Sở thích 3]</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Một vài thứ mình từng làm</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>[Project / trải nghiệm 1]</h3>
+          <p>[Mô tả ngắn: bạn đã làm gì, công nghệ/kỹ năng gì, kết quả ra sao.]</p>
+        </article>
+        <article class="card">
+          <h3>[Project / trải nghiệm 2]</h3>
+          <p>[Mô tả ngắn tương tự.]</p>
+        </article>
+        <article class="card">
+          <h3>[Project / trải nghiệm 3]</h3>
+          <p>[Mô tả ngắn tương tự.]</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Liên hệ</h2>
+      <p>Nếu muốn kết nối, bạn có thể tìm mình ở:</p>
+      <ul class="contact-list">
+        <li>Email: <a href="mailto:[email@example.com]">[email@example.com]</a></li>
+        <li>Telegram: <a href="https://t.me/[username]" target="_blank">@ [username]</a></li>
+        <li>GitHub / Portfolio: <a href="https://[link]" target="_blank">https://[link]</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> [Tên của bạn].</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
