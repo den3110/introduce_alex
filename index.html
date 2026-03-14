@@ -3,47 +3,131 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alex – Giới thiệu bản thân</title>
+  <title>Alex Store – Trang bán hàng</title>
   <style>
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #0f172a 0, #020617 45%, #000 100%);
+      background: radial-gradient(circle at top, #020617 0, #020617 45%, #000 100%);
       color: #e5e7eb;
     }
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem 4rem;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    .name {
-      font-size: clamp(2.2rem, 4vw, 3rem);
-      margin: 0 0 .5rem;
-    }
+    a { text-decoration: none; }
     .accent { color: #fb923c; }
-    .subtitle {
-      margin: 0;
+
+    header {
+      border-bottom: 1px solid #111827;
+      padding: 0.9rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(2,6,23,0.96);
+      backdrop-filter: blur(10px);
+    }
+    .nav {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .logo {
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
       color: #9ca3af;
     }
-    .section {
-      margin-top: 2.5rem;
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.9rem;
     }
-    .section h2 {
-      font-size: 1.4rem;
-      margin-bottom: 0.75rem;
+    .nav-links a { color: #9ca3af; }
+
+    .hero {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3rem;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 2rem;
+      align-items: center;
     }
-    .section p {
+    .hero h1 {
+      font-size: clamp(2.1rem, 4vw, 3rem);
+      margin: 0 0 0.8rem;
+    }
+    .hero p {
+      margin: 0;
       color: #9ca3af;
       line-height: 1.6;
     }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .badge {
+      padding: 0.15rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(251,146,60,0.7);
+      background: rgba(251,146,60,0.06);
+      font-size: 0.8rem;
+      color: #fed7aa;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 0.5rem;
+    }
+    .btn {
+      padding: 0.65rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.95rem;
+      cursor: pointer;
+      color: #f9fafb;
+    }
+    .btn.primary {
+      background: linear-gradient(135deg, #fb923c, #f97316);
+    }
+    .btn.outline {
+      background: transparent;
+      border-color: #374151;
+      color: #e5e7eb;
+    }
+
+    .hero-card {
+      border-radius: 1.1rem;
+      border: 1px solid #1f2937;
+      background: radial-gradient(circle at top, rgba(251,146,60,0.15) 0, #020617 45%);
+      padding: 1.5rem 1.4rem;
+      box-shadow: 0 20px 40px rgba(15,23,42,0.9);
+    }
+    .hero-price {
+      font-size: 2rem;
+      margin: 0.3rem 0;
+    }
+    .hero-price span { font-size: 1rem; color: #9ca3af; }
+    .hero-card ul {
+      margin: 0.8rem 0 0;
+      padding-left: 1.1rem;
+      color: #9ca3af;
+      font-size: 0.95rem;
+    }
+
+    main { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem 3rem; }
+    .section { margin-top: 2.5rem; }
+    .section h2 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+    .section p { color: #9ca3af; line-height: 1.6; margin: 0.2rem 0 0.7rem; }
+
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.2rem;
       margin-top: 1.2rem;
     }
@@ -55,118 +139,145 @@
       box-shadow: 0 18px 45px rgba(15,23,42,0.8);
     }
     .card h3 {
-      margin: 0 0 .4rem;
+      margin: 0 0 0.4rem;
       font-size: 1rem;
     }
     .card p, .card li {
-      font-size: .95rem;
       color: #9ca3af;
+      font-size: 0.95rem;
     }
-    .card ul {
-      margin: 0;
-      padding-left: 1.1rem;
+    .card ul { margin: 0; padding-left: 1.1rem; }
+
+    .guarantee {
+      border-radius: 0.8rem;
+      border: 1px dashed rgba(251,146,60,0.7);
+      background: rgba(17,24,39,0.8);
+      padding: 0.9rem 1.1rem;
+      font-size: 0.9rem;
+      color: #fbbf24;
+      margin-top: 1rem;
     }
-    .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .4rem;
-      margin-top: .6rem;
-    }
-    .badge {
-      padding: .2rem .7rem;
-      border-radius: 999px;
-      border: 1px solid rgba(251,146,60,0.7);
-      background: rgba(251,146,60,0.1);
-      font-size: .8rem;
-      color: #fed7aa;
-    }
+
     .contact-list {
       list-style: none;
       padding-left: 0;
       color: #9ca3af;
+      font-size: 0.95rem;
     }
-    .contact-list li { margin-bottom: .3rem; }
-    .contact-list a {
-      color: #fb923c;
-      text-decoration: none;
-    }
-    .contact-list a:hover { text-decoration: underline; }
+    .contact-list li { margin-bottom: 0.3rem; }
+    .contact-list a { color: #fb923c; }
+
     footer {
       border-top: 1px solid #111827;
       padding: 1rem 1.5rem 2rem;
       text-align: center;
       color: #6b7280;
-      font-size: .85rem;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; }
+      header { position: static; }
     }
   </style>
 </head>
 <body>
+  <header>
+    <nav class="nav">
+      <div class="logo">Alex<span class="accent">Store</span></div>
+      <div class="nav-links">
+        <a href="#product">Sản phẩm</a>
+        <a href="#benefits">Lợi ích</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Liên hệ</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" id="product">
+    <div>
+      <h1><span class="accent">Sản phẩm của Alex</span> – giải pháp gọn nhẹ cho công việc & cuộc sống</h1>
+      <p>
+        Đây là nơi bạn giới thiệu ngắn gọn về thứ mình đang bán: có thể là khoá học, tài liệu, template,
+        dịch vụ tư vấn, hay bất kỳ sản phẩm số nào. Chỉ cần vài dòng rõ ràng: dành cho ai, giải quyết vấn đề gì.
+      </p>
+      <div class="hero-badges">
+        <span class="badge">Dễ dùng</span>
+        <span class="badge">Áp dụng được ngay</span>
+        <span class="badge">Hỗ trợ 1-1</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn primary">Đặt mua ngay</a>
+        <a href="#benefits" class="btn outline">Xem chi tiết lợi ích</a>
+      </div>
+    </div>
+
+    <aside class="hero-card">
+      <h2 style="margin:0;font-size:1.1rem;">Gói tiêu chuẩn</h2>
+      <p class="hero-price">499.000đ <span>/ gói</span></p>
+      <p style="color:#9ca3af;font-size:.95rem;margin:0 0 .5rem;">Ví dụ: bạn có thể sửa giá & mô tả theo sản phẩm thật.</p>
+      <ul>
+        <li>Mô tả quyền lợi 1 (ví dụ: toàn bộ tài liệu PDF, video hướng dẫn).</li>
+        <li>Quyền lợi 2 (cập nhật miễn phí trong X tháng).</li>
+        <li>Quyền lợi 3 (1 buổi Q&A online / hỗ trợ qua chat).</li>
+      </ul>
+      <div class="guarantee">
+        Gợi ý: thêm cam kết như “Hoàn tiền trong 7 ngày nếu bạn cảm thấy không phù hợp”.
+      </div>
+    </aside>
+  </section>
+
   <main>
-    <header>
-      <h1 class="name">Xin chào, mình là <span class="accent">Alex</span></h1>
-      <p class="subtitle">Một chút về mình và những gì mình đang làm.</p>
-    </header>
-
-    <section class="section" id="about">
-      <h2>Về mình</h2>
-      <p>
-        Mình là Alex, hiện đang làm việc trong lĩnh vực công nghệ/phần mềm. Mình thích xây dựng
-        những thứ hữu ích, gọn gàng và có tác động thật sự đến người dùng – không chỉ là code
-        chạy được mà còn dễ hiểu và dễ phát triển về sau.
-      </p>
-      <p>
-        Ngoài công việc, mình quan tâm đến việc học thêm kỹ năng mới, tối ưu quy trình làm việc
-        và kết nối với những người có cùng cách suy nghĩ.
-      </p>
-    </section>
-
-    <section class="section" id="skills">
-      <h2>Kỹ năng & Công nghệ</h2>
-      <div class="card">
-        <p>Một vài thứ mình từng làm việc nhiều:</p>
-        <div class="badge-row">
-          <span class="badge">JavaScript / TypeScript</span>
-          <span class="badge">Node.js</span>
-          <span class="badge">React</span>
-          <span class="badge">REST API</span>
-          <span class="badge">SQL / NoSQL</span>
-          <span class="badge">Git &amp; CI/CD</span>
-        </div>
+    <section class="section" id="benefits">
+      <h2>Lợi ích chính</h2>
+      <p>3–4 ý chính giải thích vì sao người ta nên mua của bạn.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Giải quyết vấn đề cụ thể</h3>
+          <p>Viết 3–4 dòng mô tả vấn đề mà khách hàng đang gặp phải, và cách sản phẩm/dịch vụ của bạn xử lý nó.</p>
+        </article>
+        <article class="card">
+          <h3>Tiết kiệm thời gian</h3>
+          <p>Ví dụ: thay vì tự mày mò hàng tuần/tháng, khách chỉ cần làm theo hướng dẫn đã được chuẩn hoá.</p>
+        </article>
+        <article class="card">
+          <h3>Có người đồng hành</h3>
+          <p>Nếu bạn hỗ trợ 1-1 hay qua nhóm, nhấn mạnh rằng khách không phải tự làm tất cả một mình.</p>
+        </article>
       </div>
     </section>
 
-    <section class="section" id="projects">
-      <h2>Một vài thứ mình từng làm</h2>
+    <section class="section" id="faq">
+      <h2>Câu hỏi thường gặp (FAQ)</h2>
       <div class="grid">
         <article class="card">
-          <h3>Dự án 1</h3>
-          <p>Mô tả ngắn về một dự án / sản phẩm bạn thấy tự hào (bạn có thể chỉnh lại đoạn này
-          cho đúng với mình).</p>
+          <h3>Phù hợp với ai?</h3>
+          <p>Trả lời rõ: người mới, đã có kinh nghiệm, làm full-time, freelance, chủ doanh nghiệp, v.v.</p>
         </article>
         <article class="card">
-          <h3>Dự án 2</h3>
-          <p>Thêm một ví dụ khác: có thể là side project, open-source hoặc thứ bạn làm cho vui.</p>
+          <h3>Làm sao để nhận sản phẩm sau khi thanh toán?</h3>
+          <p>Ví dụ: bạn gửi qua email, qua Telegram, hoặc cho tải từ một link riêng.</p>
         </article>
         <article class="card">
-          <h3>Dự án 3</h3>
-          <p>Nếu chưa nghĩ ra cụ thể, bạn có thể tạm để trống và cập nhật sau.</p>
+          <h3>Có hỗ trợ/hoàn tiền không?</h3>
+          <p>Ghi rõ chính sách: thời gian hỗ trợ, kênh hỗ trợ, và (nếu có) điều kiện hoàn tiền.</p>
         </article>
       </div>
     </section>
 
     <section class="section" id="contact">
-      <h2>Liên hệ</h2>
-      <p>Nếu muốn kết nối hoặc trao đổi thêm, bạn có thể tìm mình qua:</p>
+      <h2>Cách đặt mua</h2>
+      <p>Đơn giản nhất là bạn cho khách nhắn trực tiếp cho mình qua các kênh dưới đây.</p>
       <ul class="contact-list">
         <li>Email: <a href="mailto:alex@example.com">alex@example.com</a></li>
-        <li>Telegram: <a href="https://t.me/username" target="_blank">@username</a></li>
-        <li>GitHub / Portfolio: <a href="https://github.com/username" target="_blank">github.com/username</a></li>
+        <li>Telegram / Zalo: <a href="https://t.me/username" target="_blank">@username</a></li>
+        <li>Hoặc điền form (nếu bạn có form riêng / landing khác).</li>
       </ul>
     </section>
   </main>
 
   <footer>
-    © <span id="year"></span> Alex.
+    © <span id="year"></span> Alex Store.
   </footer>
 
   <script>
