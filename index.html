@@ -3,195 +3,174 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alex Ji – Senior Software Engineer</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Alex – Giới thiệu bản thân</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0f172a 0, #020617 45%, #000 100%);
+      color: #e5e7eb;
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .name {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      margin: 0 0 .5rem;
+    }
+    .accent { color: #fb923c; }
+    .subtitle {
+      margin: 0;
+      color: #9ca3af;
+    }
+    .section {
+      margin-top: 2.5rem;
+    }
+    .section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+    }
+    .section p {
+      color: #9ca3af;
+      line-height: 1.6;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.2rem;
+    }
+    .card {
+      background: linear-gradient(135deg, rgba(15,23,42,0.9), rgba(15,23,42,0.6));
+      border-radius: 1rem;
+      border: 1px solid #1f2937;
+      padding: 1.1rem 1.3rem;
+      box-shadow: 0 18px 45px rgba(15,23,42,0.8);
+    }
+    .card h3 {
+      margin: 0 0 .4rem;
+      font-size: 1rem;
+    }
+    .card p, .card li {
+      font-size: .95rem;
+      color: #9ca3af;
+    }
+    .card ul {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-top: .6rem;
+    }
+    .badge {
+      padding: .2rem .7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(251,146,60,0.7);
+      background: rgba(251,146,60,0.1);
+      font-size: .8rem;
+      color: #fed7aa;
+    }
+    .contact-list {
+      list-style: none;
+      padding-left: 0;
+      color: #9ca3af;
+    }
+    .contact-list li { margin-bottom: .3rem; }
+    .contact-list a {
+      color: #fb923c;
+      text-decoration: none;
+    }
+    .contact-list a:hover { text-decoration: underline; }
+    footer {
+      border-top: 1px solid #111827;
+      padding: 1rem 1.5rem 2rem;
+      text-align: center;
+      color: #6b7280;
+      font-size: .85rem;
+    }
+  </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-inner">
-      <div class="top-bar">
-        <span class="logo">Alex Ji<span class="accent">.</span></span>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Đổi giao diện">
-          <span class="icon">☾</span>
-        </button>
-      </div>
-      <h1>Xin chào, mình là <span class="accent">Alex Ji</span></h1>
-      <p class="subtitle">
-        Senior Software Engineer – xây dựng hệ thống ổn định, dễ mở rộng và có tác động thực tế.
-      </p>
-      <div class="hero-actions">
-        <a href="#about" class="btn primary">Giới thiệu</a>
-        <a href="#experience" class="btn ghost">Kinh nghiệm</a>
-        <a href="#contact" class="btn ghost">Liên hệ</a>
-      </div>
-    </div>
-  </header>
-
   <main>
-    <section id="about" class="section">
+    <header>
+      <h1 class="name">Xin chào, mình là <span class="accent">Alex</span></h1>
+      <p class="subtitle">Một chút về mình và những gì mình đang làm.</p>
+    </header>
+
+    <section class="section" id="about">
       <h2>Về mình</h2>
       <p>
-        Mình là Alex Ji, một Senior Software Engineer tập trung vào việc thiết kế và phát triển các hệ thống web
-        có khả năng mở rộng, dễ bảo trì và bền vững trong môi trường production. Mình ưu tiên code rõ ràng,
-        kiến trúc đơn giản nhưng có chủ đích, và quy trình triển khai đáng tin cậy.
+        Mình là Alex, hiện đang làm việc trong lĩnh vực công nghệ/phần mềm. Mình thích xây dựng
+        những thứ hữu ích, gọn gàng và có tác động thật sự đến người dùng – không chỉ là code
+        chạy được mà còn dễ hiểu và dễ phát triển về sau.
       </p>
       <p>
-        Mình quen làm việc với team đa chức năng (product, design, infra), thích chia sẻ kiến thức, review code
-        và hỗ trợ các bạn developer junior/mid phát triển sự nghiệp một cách bài bản.
+        Ngoài công việc, mình quan tâm đến việc học thêm kỹ năng mới, tối ưu quy trình làm việc
+        và kết nối với những người có cùng cách suy nghĩ.
       </p>
+    </section>
 
-      <div class="stack">
-        <h3>Tech stack gần đây</h3>
-        <div class="stack-badges">
-          <span class="badge">TypeScript</span>
+    <section class="section" id="skills">
+      <h2>Kỹ năng & Công nghệ</h2>
+      <div class="card">
+        <p>Một vài thứ mình từng làm việc nhiều:</p>
+        <div class="badge-row">
+          <span class="badge">JavaScript / TypeScript</span>
           <span class="badge">Node.js</span>
-          <span class="badge">React / Next.js</span>
-          <span class="badge">PostgreSQL</span>
-          <span class="badge">Docker</span>
-          <span class="badge">AWS</span>
+          <span class="badge">React</span>
+          <span class="badge">REST API</span>
+          <span class="badge">SQL / NoSQL</span>
+          <span class="badge">Git &amp; CI/CD</span>
         </div>
       </div>
     </section>
 
-    <section id="experience" class="section">
-      <h2>Kinh nghiệm làm việc</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3>Senior Software Engineer</h3>
-              <span class="timeline-meta">2022 – hiện tại · Sản phẩm SaaS</span>
-            </div>
-            <p>
-              Thiết kế và triển khai backend service, tối ưu database, xây dựng pipeline CI/CD và làm việc trực tiếp
-              với team sản phẩm để ship tính năng cho hàng nghìn người dùng.
-            </p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3>Software Engineer</h3>
-              <span class="timeline-meta">2019 – 2022 · Công ty công nghệ</span>
-            </div>
-            <p>
-              Phát triển các ứng dụng web full-stack, tham gia refactor hệ thống cũ, chuẩn hoá coding style,
-              bổ sung test và tài liệu kỹ thuật cho team.
-            </p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3>Intern / Junior Developer</h3>
-              <span class="timeline-meta">Trước 2019</span>
-            </div>
-            <p>
-              Bắt đầu với các dự án nhỏ, tự học thêm về kiến trúc hệ thống, clean code và những thói quen tốt khi
-              làm việc với codebase dài hạn.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="section">
-      <h2>Giá trị mình mang lại</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>System & Backend Design</h3>
-          <p>
-            Thiết kế API, luồng dữ liệu và kiến trúc backend rõ ràng, ưu tiên tính đơn giản, dễ mở rộng và khả năng
-            quan sát (logging, metrics, alerting).
-          </p>
-        </div>
-        <div class="card">
-          <h3>Delivery ổn định</h3>
-          <p>
-            Thiết lập pipeline CI/CD, review code kỹ, tự động hoá kiểm tra cơ bản để giảm rủi ro khi release tính năng mới.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Mentoring & Teamwork</h3>
-          <p>
-            Hỗ trợ định hướng kỹ thuật, review code và chia sẻ kinh nghiệm cho các bạn dev junior/mid, giúp team đi cùng
-            một hướng và tránh lặp lại lỗi cũ.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section">
+    <section class="section" id="projects">
       <h2>Một vài thứ mình từng làm</h2>
       <div class="grid">
         <article class="card">
-          <h3>Nền tảng web cho sản phẩm SaaS</h3>
-          <p>
-            Tham gia thiết kế kiến trúc, xây dựng backend API và tích hợp với frontend. Tối ưu hiệu năng, phân tách service
-            và thiết lập CI/CD để release nhanh nhưng vẫn an toàn.
-          </p>
+          <h3>Dự án 1</h3>
+          <p>Mô tả ngắn về một dự án / sản phẩm bạn thấy tự hào (bạn có thể chỉnh lại đoạn này
+          cho đúng với mình).</p>
         </article>
         <article class="card">
-          <h3>Hệ thống xử lý dữ liệu & báo cáo</h3>
-          <p>
-            Xây dựng pipeline xử lý dữ liệu, lưu trữ và tạo các báo cáo phục vụ team business. Tập trung vào tính ổn định,
-            khả năng mở rộng và dễ theo dõi khi có sự cố.
-          </p>
+          <h3>Dự án 2</h3>
+          <p>Thêm một ví dụ khác: có thể là side project, open-source hoặc thứ bạn làm cho vui.</p>
         </article>
         <article class="card">
-          <h3>Mentoring & kỹ thuật nội bộ</h3>
-          <p>
-            Tham gia review code, định hướng kỹ thuật cho một số bạn developer trong team. Chuẩn hoá một số guideline về
-            coding style, testing và tài liệu kỹ thuật.
-          </p>
+          <h3>Dự án 3</h3>
+          <p>Nếu chưa nghĩ ra cụ thể, bạn có thể tạm để trống và cập nhật sau.</p>
         </article>
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <section class="section" id="contact">
       <h2>Liên hệ</h2>
       <p>Nếu muốn kết nối hoặc trao đổi thêm, bạn có thể tìm mình qua:</p>
       <ul class="contact-list">
         <li>Email: <a href="mailto:alex@example.com">alex@example.com</a></li>
-        <li>Telegram: <a href="https://t.me/tistst" target="_blank">@tistst</a></li>
-        <li>GitHub: <a href="https://github.com/den3110" target="_blank">https://github.com/den3110</a></li>
+        <li>Telegram: <a href="https://t.me/username" target="_blank">@username</a></li>
+        <li>GitHub / Portfolio: <a href="https://github.com/username" target="_blank">github.com/username</a></li>
       </ul>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>© <span id="year"></span> Alex Ji.</p>
+  <footer>
+    © <span id="year"></span> Alex.
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    const toggle = document.getElementById('theme-toggle');
-    const root = document.documentElement;
-
-    function setTheme(mode) {
-      if (mode === 'light') {
-        root.classList.add('light');
-        toggle.querySelector('.icon').textContent = '☀';
-      } else {
-        root.classList.remove('light');
-        toggle.querySelector('.icon').textContent = '☾';
-      }
-      localStorage.setItem('alex-theme', mode);
-    }
-
-    const saved = localStorage.getItem('alex-theme');
-    if (saved === 'light' || saved === 'dark') {
-      setTheme(saved);
-    }
-
-    toggle.addEventListener('click', () => {
-      const isLight = root.classList.contains('light');
-      setTheme(isLight ? 'dark' : 'light');
-    });
   </script>
 </body>
 </html>
